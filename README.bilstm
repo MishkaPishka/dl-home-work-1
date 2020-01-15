@@ -1,0 +1,36 @@
+This project was developed using:
+Python 3.7.3
+pytorch 1.3.1
+numpy 1.16.2
+Packages were installed using conda 4.7.12 over the Anaconda python distribution.
+
+The program expects the assignment's data to be provided in the root of the project in a folder named "data".
+The structure of the folder should be as follows:
+-data
+    -ner
+        -dev
+        -train
+        -test
+    -pos
+        -dev
+        -test
+        -train
+    vocab.txt
+    wordVectors.txt
+	
+To run the code 
+To run bilstmTrain.py provide the following command line arguments:
+1. --tager-mode: pos or ner
+2. --repr-mode a or b or c or d
+3. --model-file name of model file to export.
+
+
+To run bilstmPredict.py provide the following command line arguments:
+1. --tager-mode: pos or ner
+2. --repr-mode a or b or c or d
+3. --model-file name of model file to export.
+4. --input-file path to input file.
+5. --output-file name of file to write predictions to.
+
+You can also directly hardcode the default values in parse_code.py - if no command line arguments are given the default values would be loaded from that file.
+The predictions made by running bilstmPredict.py are outputted to the file test_output_repr_<repr_mode>.<tagger_mode>
